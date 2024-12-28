@@ -290,7 +290,6 @@ mode "$mode_exec" {
     bindsym v exec --no-startup-id virt-manager, mode "default"
     bindsym c exec --no-startup-id chromium-browser, mode "default"
     bindsym s exec --no-startup-id sioyek, mode "default"
-# bindsym q exec --no-startup-id qutebrowser, mode "default"
     bindsym q exec --no-startup-id "$HOME/.local/bin/qutebrowser", mode "default"
     bindsym p exec --no-startup-id mypaint, mode "default"
     bindsym a exec --no-startup-id pavucontrol, mode "default"
@@ -302,6 +301,7 @@ mode "$mode_exec" {
     bindsym g exec --no-startup-id gimp, mode "default"
     bindsym r exec --no-startup-id google-chrome, mode "default"
     bindsym o exec --no-startup-id "flatpak run md.obsidian.Obsidian", mode "default"
+    bindsym y exec --no-startup-id "flatpak run com.spotify.Client", mode "default"
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
