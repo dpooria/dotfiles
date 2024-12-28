@@ -40,7 +40,8 @@ alias la="l -altrh --color=auto"
 alias xrandedp1="xrandr --output eDP-1 --auto --primary --output HDMI-1 --off"
 alias open="xdg-open"
 alias darkbg="feh --bg-scale /usr/share/backgrounds/default-dark.png"
-alias config='/usr/bin/git --git-dir=/home/podabb/.cfg/ --work-tree=/home/podabb'
+# from https://www.atlassian.com/git/tutorials/dotfiles
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # Functions
 function vimj() {
