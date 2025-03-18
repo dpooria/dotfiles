@@ -42,6 +42,7 @@ alias open="xdg-open"
 alias darkbg="feh --bg-scale /usr/share/backgrounds/default-dark.png"
 # from https://www.atlassian.com/git/tutorials/dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias shecan='cp /etc/resolv.conf.shecan /etc/resolv.conf'
 
 # Functions
 function vimj() {
