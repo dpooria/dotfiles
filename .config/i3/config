@@ -353,6 +353,23 @@ exec_always --no-startup-id copyq
 # map capslock to escape and control
 # exec_always --no-startup-id setxkbmap -option ctrl:nocaps
 # exec_always --no-startup-id xcape -e 'Control_L=Escape' -t 100
+exec --no-startup-id /home/podabb/.config/i3/i3-battery-popup/i3-battery-popup
+# redshift modes
+bindsym $mod+o mode "$mode_redshift"
+set $mode_redshift Set colour temperature: (a)uto, (r)eset, (2)500K, (3)000K, (4)000K, (5)000K
+set $kill_redshift pkill -9 redshift;
+mode "$mode_redshift" {
+    bindsym a exec --no-startup-id "$kill_redshift redshift -P -t 5000:4000", mode "default"
+    bindsym r exec --no-startup-id "$kill_redshift redshift -x", mode "default"
+    bindsym 2 exec --no-startup-id "$kill_redshift redshift -P -O 2500", mode "default"
+    bindsym 3 exec --no-startup-id "$kill_redshift redshift -P -O 3000", mode "default"
+    bindsym 4 exec --no-startup-id "$kill_redshift redshift -P -O 4000", mode "default"
+    bindsym 5 exec --no-startup-id "$kill_redshift redshift -P -O 5000", mode "default"
+ 
+    # exit mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 exec --no-startup-id gromit-mpx --key "F9"
 # assign [class="Chromium"] $ws9
@@ -371,10 +388,12 @@ assign [class="Thunar"] $ws4
 assign [class="pavucontrol"] $ws4
 assign [class="TelegramDesktop"] $ws4
 assign [class="discord"] $ws4
+assign [class="Vesktop"] $ws4
 assign [class="clickup"] $ws4
 assign [class="obsidian"] $ws4
 assign [class="Virt-manager"] $ws5
 assign [class="Minecraft"] $ws6
 assign [class="LabyMod"] $ws6
+assign [class="Home - Lunar Client"] $ws6
 assign [class="Cheese"] $ws9
 
