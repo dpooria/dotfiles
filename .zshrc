@@ -69,8 +69,9 @@ export LESS_TERMCAP_ZO=$(tput ssupm)
 export LESS_TERMCAP_ZW=$(tput rsupm)
 export GROFF_NO_SGR=1         # For Konsole and Gnome-terminal
 #
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export MANROFFOPT="-c"
+# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# export MANROFFOPT="-c"
+export MANPAGER="nvim +Man!"
 export PAGER='bat'
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -110,3 +111,9 @@ unset __conda_setup
 # <<< conda initialize <<<
 if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 eval "$(zoxide init zsh)"
+
+PATH="/home/podabb/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/podabb/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/podabb/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/podabb/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/podabb/perl5"; export PERL_MM_OPT;
