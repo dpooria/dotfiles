@@ -1,8 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-if playerctl status | grep -q "Playing"; then
-    # If audio is playing force dpms on
+# If *any* player is playing (generic MPRIS or Firefox-specific), keep the screen on
+if playerctl status 2>/dev/null | grep -q "Playing" \
+   || playerctl -p firefox status 2>/dev/null | grep -q "Playing"; then
     xset dpms force on
 else
-    i3lock -te -i $HOME/Pictures/rick_morty_blurred.png && xset dpms force off && sleep 1
+    i3lock -te -i "$HOME/Pictures/rick_morty_blurred.png" \
+    && xset dpms force off \
+    && sleep 1
 fi
