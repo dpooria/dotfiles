@@ -34,6 +34,14 @@ config.bind(
 config.bind(" sm", "messages")
 config.bind(" tr", "spawn --userscript translate")
 config.bind(" tx", "spawn --userscript translate --text")
+# copied from qutepass
+config.bind('<z><l>', 'spawn --userscript qute-pass')
+config.bind('<z><u><l>', 'spawn --userscript qute-pass --username-only')
+config.bind('<z><p><l>', 'spawn --userscript qute-pass --password-only')
+config.bind('<z><o><l>', 'spawn --userscript qute-pass --otp-only')
+# fuzzy find webpage
+config.bind(
+    ',s', 'spawn --userscript page-rofi')
 # --c
 c.editor.command = ["nvim-qt", "{}"]
 c.tabs.background = True
@@ -56,8 +64,9 @@ c.url.searchengines["yt"] = "https://www.youtube.com/results?search_query={}"
 c.aliases["lab"] = "spawn jupyter lab"
 # ** fonts **
 # font = "Source Code Pro"
-font = "Inconsolata"
-font_size = "11pt"
+# font = "Inconsolata"
+font = "JetBrainsMono Nerd Font"
+font_size = "12pt"
 c.fonts.default_family = f'"{font}"'
 c.fonts.default_size = font_size
 c.fonts.completion.entry = f'{font_size} "{font}"'
