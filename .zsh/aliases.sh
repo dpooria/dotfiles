@@ -38,11 +38,14 @@ alias svenv=". ./venv/bin/activate"
 alias lt="ls -ltrh --color=auto"
 alias la="l -altrh --color=auto"
 alias xrandedp1="xrandr --output eDP-1 --auto --primary --output HDMI-1 --off"
+alias xinternal="xrandr --output eDP-1 --auto --primary --output HDMI-1 --off --output DP-1 --off --output DP-2 --off"
 alias open="xdg-open"
 alias darkbg="feh --bg-scale /usr/share/backgrounds/default-dark.png"
 # from https://www.atlassian.com/git/tutorials/dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias shecan='cp /etc/resolv.conf.shecan /etc/resolv.conf'
+alias gemini='/home/podabb/node_modules/.bin/gemini'
+alias geminim='/home/podabb/node_modules/.bin/gemini -m gemini-2.5-flash'
 
 # Functions
 function vimj() {

@@ -34,7 +34,8 @@ function preexec() {
     LAST_COMMAND_TIME=$(date "+%H:%M:%S")
     # SECONDS=0
 }
-PURE_PROMPT_SYMBOL='%f❯'
+# PURE_PROMPT_SYMBOL='%f❯'
+PURE_PROMPT_SYMBOL='%f$'
 
 #>>> slow 
 # setopt autocd extendedglob notify
@@ -97,20 +98,20 @@ export PATH="$HOME/go/bin:$HOME/.modular/pkg/packages.modular.com_mojo/bin:$HOME
 #
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/usr/etc/profile.d/conda.sh" ]; then
-        . "/usr/etc/profile.d/conda.sh"
-    else
-        export PATH="/usr/bin:$PATH"
-    fi
-fi
-unset __conda_setup
+# __conda_setup="$('/usr/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/usr/etc/profile.d/conda.sh" ]; then
+#         . "/usr/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/usr/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
 # <<< conda initialize <<<
-if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-eval "$(zoxide init zsh)"
+# if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+# eval "$(zoxide init zsh)"
 
 PATH="/home/podabb/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/podabb/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;

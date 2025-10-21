@@ -53,8 +53,8 @@ floating_modifier $mod
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec /bin/xterm
-# bindsym $mod+Return exec alacritty
+# bindsym $mod+Return exec /bin/xterm
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+q kill
@@ -256,8 +256,6 @@ set $gray #a89984
 set $darkgray #1d2021
 set $crimson #631305
 
-default_border pixel 2
-default_floating_border pixel 2
 title_align center
 # class                 border|backgr|text|indicator|child_border
 client.focused          $darkgray $crimson $yellow $purple $darkgray
@@ -283,8 +281,8 @@ bar {
     }
 }
 
-gaps inner 2
-gaps outer 2
+gaps inner 0
+gaps outer 1
 smart_gaps off
 
 # Small QoL
@@ -298,18 +296,18 @@ popup_during_fullscreen smart
 set $mode_exec Exec
 mode "$mode_exec" {
     bindsym v exec --no-startup-id virt-manager, mode "default"
-    bindsym c exec --no-startup-id chromium-browser, mode "default"
+    # bindsym c exec --no-startup-id chromium-browser, mode "default"
+    bindsym c exec --no-startup-id vivaldi, mode "default"
     bindsym s exec --no-startup-id sioyek, mode "default"
     bindsym q exec --no-startup-id "$HOME/.local/bin/qutebrowser", mode "default"
     bindsym p exec --no-startup-id mypaint, mode "default"
     bindsym a exec --no-startup-id pavucontrol, mode "default"
     bindsym l exec --no-startup-id slack, mode "default"
     bindsym f exec --no-startup-id firefox, mode "default"
-    bindsym t exec --no-startup-id telegram-desktop, mode "default"
     bindsym m exec --no-startup-id "/opt/podabb/labymod/LabyMod.AppImage", mode "default"
     bindsym e exec --no-startup-id thunar, mode "default"
     bindsym g exec --no-startup-id gimp, mode "default"
-    bindsym r exec --no-startup-id google-chrome, mode "default"
+    bindsym t exec --no-startup-id "flatpak run org.telegram.desktop", mode "default"
     bindsym o exec --no-startup-id "flatpak run md.obsidian.Obsidian", mode "default"
     bindsym y exec --no-startup-id "flatpak run com.spotify.Client", mode "default"
     # back to normal: Enter or Escape
@@ -354,9 +352,10 @@ exec --no-startup-id gromit-mpx --key "F9"
 #auto start the compositor
 exec --no-startup-id picom
 #keyboard layout
-exec_always --no-startup-id setxkbmap -layout us,ir -option "" -option 'grp:win_space_toggle'
+exec_always --no-startup-id setxkbmap -layout us,ir -option "" -option 'grp:alt_shift_toggle'
 exec_always --no-startup-id xset r rate 190 35
 exec_always --no-startup-id feh --bg-scale $HOME/Pictures/Minimal.png
+bindsym $mod+Ctrl+e exec rofimoji
 #screenshot
 bindsym Print exec NOW=$(date +%d-%b-%Y_%H-%M-%S) && maim --format png --select > ~/screenshots/screenshot_$NOW.png && xclip -selection clip -t image/png ~/screenshots/screenshot_$NOW.png
 

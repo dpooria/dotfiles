@@ -14,21 +14,29 @@ Xft.lcdfilter:  lcddefault
 ! ---- XTerm basics ----
 XTerm*renderFont:           true
 XTerm*termName:       xterm-256color
+/*XTerm*faceName:       JetBrainsMono Nerd Font:style=Regular*/
 XTerm*faceName:       JetBrainsMono Nerd Font:style=Regular
-XTerm*faceSize:       16
-XTerm.vt100.scaleHeight: 0.95
+XTerm*faceSize:       15
 XTerm*utf8:                 2
 XTerm*locale:               true
 XTerm*saveLines:            4096
 XTerm*scrollBar:            false
-
-! Disable fake bold
+/**/
+/*! Disable fake bold*/
 XTerm*boldMode:       false
 XTerm*allowBoldFonts: false
-
-! Internal padding
-XTerm*internalBorder: 4
-
+/**/
+/*! Internal padding*/
+XTerm*internalBorder: off
+XTerm*borderWidth: 0
+Xterm*TitleBar:         off
+Xterm*AllowIconInput:   on
+Xterm*termtype:         vt100
+Xterm*Title:         off
+Xterm*Border:        off
+Xterm*none:        on
+Xterm*clientDecoration: none
+/**/
 ! ---- Colors ----
 XTerm*foreground:     #ebdbb2
 XTerm*background:     #1d2021
@@ -58,8 +66,8 @@ XTerm*color12: #83a598
 XTerm*color13: #d3869b
 XTerm*color14: #8ec07c
 XTerm*color15: #ebdbb2
-
-! ---- Selection / URL handling ----
+/**/
+/*! ---- Selection / URL handling ----*/
 XTerm*on3Clicks: regex
 XTerm*charClass: 33:48,36-47:48,58:48,63-64:48,126:48
 
@@ -68,7 +76,18 @@ XTerm*vt100.graphics: on
 XTerm*cursorUnderLine: true
 ! Use CLIPBOARD instead of PRIMARY
 XTerm*selectToClipboard: true
-! Ctrl+Shift+C to copy
-XTerm.vt100.translations: #override \
-    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
-    Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
+! Ctrl+Shift+C to copy and zoom in/out
+XTerm*VT100.Translations: #override \
+    Ctrl Shift <Key>C:                copy-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>V:                insert-selection(CLIPBOARD) \n\
+    Ctrl  <Key>plus:                  larger-vt-font() \n\
+    Ctrl ~Shift <Key>KP_Add:          larger-vt-font() \n\
+    Ctrl ~Shift <Key>minus:           smaller-vt-font() \n\
+    Ctrl ~Shift <Key>KP_Subtract:     smaller-vt-font()
+/*XTerm.vt100.translations: #override \*/
+/*    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\*/
+/*    Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\*/
+/*    Ctrl <Key>plus:     larger-vt-font() \n\*/
+/*    Ctrl <Key>KP_Add:   larger-vt-font() \n\*/
+/*    Ctrl <Key>minus:    smaller-vt-font() \n\*/
+/*    Ctrl <Key>KP_Subtract: smaller-vt-font()*/
